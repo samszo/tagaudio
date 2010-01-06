@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=8">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/tagaudio_Honore_benjamin.svg" ></iframe>
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=11">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/IHM_tag_audio.svg" ></iframe>
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=13">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/Tag_Audio.svg" ></iframe>
@@ -18,3 +23,4 @@
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=28">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/tagAudioIHM.svg" ></iframe>
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=30">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/ihmAudioTag.svg" ></iframe>
 <a href="http://miseencen.free.fr/spip/ecrire/?exec=articles&id_article=34">Lien spip</a><iframe width="100%" height="100%" src="http://miseencen.free.fr/spip/IMG/svg/mockup.svg" ></iframe>
+

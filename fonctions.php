@@ -1,6 +1,7 @@
 <?php
 /* ----------------------------------------------------------------------------------------------------- */
 // ajouter des tags pour sur période donnee du fichier
+
 function Add_tags($id_media, $debut, $fin, $list_tag)
 {
  $id_tag= -1 ;

@@ -12,7 +12,7 @@ define('GETID3_HELPERAPPSDIR', 'C:/helperapps/');
 $getID3 = new getID3;
 $getID3->setOption(array('encoding' => 'UTF-8'));
 
-ExploreDir("../cy-audios/");
+ExploreDir("../cy-audios/hachour/");
 
 ob_end_flush();
 
@@ -66,7 +66,7 @@ function SetFlux($fi){
 	//enregistre le document
 	$idDoc = $oFlux->GetDoc($fi["filenamepath"]
 		, $fi["tags_html"]["id3v2"]["title"][0]
-		, $fi["tags_html"]["id3v2"]["track_number"][0]);
+		, $fi["tags_html"]["id3v2"]["track_number"][0],"","audio/mpeg");
 	echo $fi["filename"]." (".$idDoc.")<br/>";
 		
 	//enregistre les tags du doc
@@ -77,7 +77,7 @@ function SetFlux($fi){
 	}
 
 	//enregistre le doc pour l'utilisateur
-	$oFlux->SetExiTag();
+	$oFlux->SetExiDoc($idExi,$idDoc);
 	
 	echo "  - ".$t."<br/>";
 	echo "<br/>";

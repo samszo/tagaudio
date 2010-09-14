@@ -9,6 +9,7 @@
   require_once(PathRoot."library/Site.php");
   require_once(PathRoot."library/Flex.php");
   require_once(PathRoot."library/getid3/getid3.php");
+  require_once(PathRoot."library/cache.inc.php");
 
   define ("TRACE", false);
   define ("DEFSITE", "local");

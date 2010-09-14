@@ -289,11 +289,10 @@ class Flux{
 		
 		switch ($dst) {
 			case 'XML3D':
-				Header("content-type: application/xml");
-				echo $this->GetTagsXml3D($rs);
+				return $this->GetTagsXml3D($rs);
 				break;
 			case 'table':		
-				echo $this->GetTagsTable($rs);
+				return $this->GetTagsTable($rs);
 				break;
 			case 'rs':
 				return $rs;
@@ -332,7 +331,8 @@ class Flux{
 		$sql = "SELECT d.id_doc, d.titre, d.url, d.branche
 				, e.nom, e.id_exi
 				, tQ.tag question
-				, dIma.url image 
+				, dIma.url image
+				, dLien.url lien 
 			FROM flux_docs d
 				INNER JOIN flux_exis_docs ed ON ed.id_doc = d.id_doc
 				INNER JOIN flux_exis e ON e.id_exi = ed.id_exi ".$exis_tag." 
@@ -341,6 +341,8 @@ class Flux{
 				INNER JOIN flux_tags tQ ON tQ.id_tag = tt.id_tag_dst 
 				INNER JOIN flux_exis_docs edIma ON edIma.id_exi = ed.id_exi
 				INNER JOIN flux_docs dIma ON dIma.id_doc = edIma.id_doc AND dIma.content_type='image/png'
+				INNER JOIN flux_exis_docs edLien ON edLien.id_exi = ed.id_exi
+				INNER JOIN flux_docs dLien ON dLien.id_doc = edLien.id_doc AND dLien.content_type='text/html'
 				".$tags_exis."
 				".$tags_docs."
 				".$where."
@@ -361,8 +363,8 @@ class Flux{
 			<artist>'.$r['nom'].'</artist>
 			<creator>Claude Yacoub</creator>
 			<image>'.$r['image'].'</image>
-			<info>http://claudeyacoub.org/fr/diplomes/doctorat-2010/entretiens/</info>
-			<link>http://claudeyacoub.org/fr/amato-etienne/</link>
+			<info>'.$r['lien'].'</info>
+			<link>'.$r['lien'].'</link>
 			<location>'.$path.'</location>
 			<title>'.$r['titre'].' * '.$r['nom'].' * '.$r['question'].'</title>
 			<trackNum>'.$r['branche'].'</trackNum>
@@ -371,8 +373,7 @@ class Flux{
 		$xml .= '</trackList>
 			</playlist>';
 		
-		Header("content-type: application/xml");
-		echo $xml;
+		return $xml;
 				
 	}
 	

@@ -64,7 +64,12 @@ else
 		$idTag = $_POST['idTag'];
 	else
     	$idTag = -1;
-    	
+
+if(isset($_GET['noCache']))
+	$cacheTime = 0;
+else 
+	$cacheTime = CACHETIME;
+   	
     	
 $oSite = new Site($infos);
 $oFlux = new Flux($oSite);
@@ -73,16 +78,36 @@ $oFlex = new Flex($oSite);
 $resultat = "";     
 switch ($fonction) {
 	case 'GetTags':		
-		$oFlux->GetTags($src, $dst, $params);
+         $oCache = new Cache($src."_".$dst."_".$params, $cacheTime,$fonction);
+         if (!$oCache->Check()) {
+         	$val = $oFlux->GetTags($src, $dst, $params);
+         	$oCache->Set($val);
+         }
+        if($dst=="XML3D")
+        	Header("content-type: application/xml");
+		echo $oCache->Get();		
 		break;
 	case 'GetListeMp3':
-		$oFlux->GetListeMp3($src, $params);
-		break;
+         $oCache = new Cache($src."_".$params, $cacheTime,$fonction);
+         if (!$oCache->Check()) {
+         	$val = $oFlux->GetListeMp3($src, $params);
+         	$oCache->Set($val);
+         }
+		Header("content-type: application/xml");
+        echo $oCache->Get();		
+        break;
 	case 'GetCols':
 		$oFlex->GetColos($idGrille);
 		break;
 	case "FindAll":
-		$oFlex->FindAll($idGrille,$idExi,$idDoc);
+		 $oCache = new Cache($idGrille."_".$idExi."_".$idDoc, $cacheTime,$fonction);
+         if (!$oCache->Check()) {
+         	$val = $oFlex->FindAll($idGrille,$idExi,$idDoc);
+         	$oCache->Set($val);
+         }
+         header('Content-type: text/xml');
+         echo $oCache->Get();		
+         
 		break;
 	case "Delete":
 		$oFlex->Delete($idGrille,$idExi,$idDoc,$idTag);
@@ -91,7 +116,8 @@ switch ($fonction) {
 		$oFlex->InsertTag($idGrille,$idExi,$idDoc,$tag);
 		break;
 }
-        
+
+
 echo $resultat;  
         
   

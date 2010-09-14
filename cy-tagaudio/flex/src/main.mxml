@@ -20,7 +20,7 @@
      />
 
 
-	<mx:Panel id="tagPanel" width="800" height="600" title="Mélanges d'existences"
+	<mx:Panel id="tagPanel" width="800" height="600" title=""
    		verticalScrollPolicy="off" horizontalScrollPolicy="off" 
 		horizontalAlign="center" verticalAlign="middle" borderStyle="none" cornerRadius="0" layout="absolute">
 		<mx:Canvas id="Cieux" 
@@ -44,7 +44,7 @@
   		 	 />			
 		</mx:Canvas>
 
-		<mx:Panel id="playerPanel" title="Paroles croisées"
+		<mx:Panel id="playerPanel" title=""
    			verticalScrollPolicy="off" horizontalScrollPolicy="off" 
 			horizontalAlign="center" verticalAlign="middle" borderStyle="none" cornerRadius="0" layout="absolute"
 			backgroundColor="#FFFFFF" 

@@ -200,8 +200,7 @@ class Flex{
 	  	$xml .= "<metadata/>".EOL;
 		$xml .= "</response>";
 	
-	    header('Content-type: text/xml');
-		echo $xml;
+		return $xml;
 	}
 
 	function InsertTag($idGrille,$idExi,$idDoc,$tag){

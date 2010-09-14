@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<tags>
+<tag><name>architecte</name><tid>1</tid><weight>1</weight><counter>10</counter><repetead>10</repetead><size>100</size><meuPeso>2</meuPeso></tag>
+<tag><name>chercheur</name><tid>3</tid><weight>1</weight><counter>10</counter><repetead>10</repetead><size>100</size><meuPeso>2</meuPeso></tag>
+
+<tag><name>enseignant</name><tid>2</tid><weight>1</weight><counter>10</counter><repetead>10</repetead><size>100</size><meuPeso>2</meuPeso></tag>
+<tag><name>philosophe</name><tid>14</tid><weight>1</weight><counter>10</counter><repetead>10</repetead><size>100</size><meuPeso>2</meuPeso></tag>
+<tag><name>science de l'information et de la communication</name><tid>7</tid><weight>1</weight><counter>10</counter><repetead>10</repetead><size>100</size><meuPeso>2</meuPeso></tag>
+
+</tags>

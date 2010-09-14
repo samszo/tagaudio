@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.xspf.org/xspf-v1.html#rfc.section.4.1.1.2 -->
+<!-- the above link is all the documentation on xspf, this loosely follows the spec -->
+<playlist version="0">
+	<trackList>
+
+		<track>
+			<album>Unknown</album>
+			<annotation></annotation>
+			<artist>Unknown</artist>
+			<creator>Axel Jensen</creator>
+			<image></image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.downloads.betterpropaganda.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Imperial Teen Ivanka</title>
+			<trackNum></trackNum>
+		</track>
+		
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>The Gift</title>
+			<trackNum>8</trackNum>
+		</track>
+	
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+		<track>
+			<album>We Don't Need to Whisper</album>
+			<annotation></annotation>
+			<artist>Angels and Airwaves</artist>
+			<creator>Axel Jensen</creator>
+			<image>http://www.killtheheart.com/Music/Angels and Airwaves/We Don't Need to Whisper/cover.jpg</image>
+			<info>http://www.killtheheart.com</info>
+			<link>http://www.angelsandairwaves.com/</link>
+			<location>http://localhost/cy-manifestes/cy-audios/id_quintrand_1.mp3</location>
+			<title>Good Day</title>
+			<trackNum>9</trackNum>
+		</track>
+
+
+	
+	</trackList>
+</playlist>
+

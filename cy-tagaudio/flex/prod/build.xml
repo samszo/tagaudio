@@ -1,0 +1,105 @@
+<!-- Note that the basedir is explicitly set! -->
+<project name="xmlMP3Player" default="build" basedir="V:\cfwt_blogs\axel\Examples\xspfPlayer">
+<!-- SVN settings -->
+<property name="projectName" value="xmlMP3Player"/>
+<property name="svn.revision" value="1.0.1"/>
+
+<!-- base dir -->
+<property name="build.basedir" value="V:\cfwt_blogs\axel\Examples\xspfPlayer" />
+<property name="build.downloadDir" value="V:\cfwt_blogs\axel\download\xmlMp3Player" />
+	
+<!-- A dir for temp files -->
+<property name="build.bigTemp" value="bigTemp" />
+<property name="build.smallTemp" value="smallTemp" />
+<property name="build.flexSourceTemp" value="flexSourceTemp" />
+	
+<!-- A dir for clean files -->
+<property name="build.bigClean" value="bigClean" />
+<property name="build.smallClean" value="smallClean" />
+<property name="build.flexSourceClean" value="flexSourceClean" />
+	
+<!-- Filename of the .zip to create -->
+<property name="build.bigFilename" value="${projectName}Big_${svn.revision}.zip" />
+<property name="build.smallFilename" value="${projectName}Small_${svn.revision}.zip" />
+<property name="build.flexSourceFilename" value="${projectName}FlexSource_${svn.revision}.zip" />
+   
+
+<!-- Create the temp and clean dirs if necessary -->
+<target name="createArchiveDir">
+<mkdir dir="${build.bigTemp}"/>
+<mkdir dir="${build.smallTemp}"/>
+<mkdir dir="${build.flexSourceTemp}"/>
+</target>
+
+<target name="build" depends="createArchiveDir">
+
+	<copy todir="${build.flexSourceTemp}">
+		<fileset dir="${build.basedir}"/>
+	</copy>
+	
+	<!-- Remove any Eclipse .project files that someone may have committed -->
+	<delete file="${build.flexSourceTemp}/.project" />
+	<delete file="${build.flexSourceTemp}/.flexProperties" />
+	<delete file="${build.flexSourceTemp}/.actionScriptProperties" />
+	<delete dir="${build.flexSourceTemp}/bin" />
+	<delete dir="${build.flexSourceTemp}/bigTemp" />
+	<delete dir="${build.flexSourceTemp}/smallTemp" />
+	<delete dir="${build.flexSourceTemp}/flexSourceTemp" />
+	
+	<copy file="${build.basedir}/bin/data.xml" todir="${build.bigTemp}"/>
+	<copy file="${build.basedir}/bin/xmlPlayer.cfm" todir="${build.bigTemp}"/>
+	<copy file="${build.basedir}/bin/xmlPlayer.swf" todir="${build.bigTemp}"/>
+	<copy file="${build.basedir}/bin/swfobject.js" todir="${build.bigTemp}"/>
+
+	<copy file="${build.basedir}/bin/data.xml" todir="${build.smallTemp}"/>
+	<copy file="${build.basedir}/bin/xmlPlayerSmall.cfm" todir="${build.smallTemp}"/>
+	<copy file="${build.basedir}/bin/xmlPlayerSmall.swf" todir="${build.smallTemp}"/>
+	<copy file="${build.basedir}/bin/swfobject.js" todir="${build.smallTemp}"/>
+	
+<!-- Move it all to the clean dir -->            
+<copy todir="${build.bigClean}">
+	
+	<fileset dir="${build.bigTemp}">
+		<exclude name="**/*.svn"/>
+	</fileset>
+	
+</copy>
+
+<copy todir="${build.smallClean}">
+	
+	<fileset dir="${build.smallTemp}">
+		<exclude name="**/*.svn"/>
+	</fileset>
+	
+</copy>
+
+<copy todir="${build.flexSourceClean}">
+	
+	<fileset dir="${build.flexSourceTemp}">
+		<exclude name="**/*.svn"/>
+	</fileset>
+	
+</copy>
+
+	
+
+<!-- Zip up the clean dir and copy the zip to the basedir -->
+<zip destfile="${build.bigClean}/${build.bigFilename}" basedir="${build.bigClean}" />
+<zip destfile="${build.smallClean}/${build.smallFilename}" basedir="${build.smallClean}" />
+<zip destfile="${build.flexSourceClean}/${build.flexSourceFilename}" basedir="${build.flexSourceClean}" />
+	
+<copy todir="${build.downloadDir}">
+	<fileset dir="${build.bigClean}" includes="${build.bigFilename}" />
+	<fileset dir="${build.smallClean}" includes="${build.smallFilename}" />
+	<fileset dir="${build.flexSourceClean}" includes="${build.flexSourceFilename}" />
+</copy>
+
+<!-- Remove temp and clean dirs -->
+<delete dir="${build.bigTemp}" />
+<delete dir="${build.smallTemp}" />
+<delete dir="${build.flexSourceTemp}" />
+<delete dir="${build.bigClean}" />
+<delete dir="${build.smallClean}" />
+<delete dir="${build.flexSourceClean}" />
+</target>
+</project>

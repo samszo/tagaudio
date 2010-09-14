@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:ComboBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	 change="changeCbMot()"
+	creationComplete="init()" >
+	<mx:Script source="../http.as"/>
+	<mx:Script>
+        <![CDATA[
+	import mx.managers.CursorManager;
+	import mx.managers.PopUpManager;
+
+	[Bindable] public var idGroupe:String;
+
+	private function init():void
+	{
+		//initialisation du service
+		initGateway();    
+	    //chargement des données
+	    fill();
+		//this.dataProvider=this.arrTypeControle;     
+	}
+
+	public function getIndex(label:String):int
+	{
+		var i:int
+	    for each(var row:Object in this.dataProvider){
+	    	if(row["titre"]==label){
+	    		return i;
+	    	}
+	    	i++;
+	    }
+   		return -1;
+	}
+
+
+	public function fill():void 
+	{
+	    /**
+	     * find the order parameters
+	     */
+	    var desc:Boolean = false;
+	    
+	    CursorManager.setBusyCursor();
+	
+	    var parameters:* =
+	    {
+	        "idGroupe": idGroupe,
+	        "idGrille": "GetListeMot"
+	    }
+	    doRequest("FindAll", parameters, fillHandler);
+	
+	}			
+
+
+	private function fillHandler(e:Object):void
+	{
+		if(!e)return;
+		
+	    if (e.isError)
+	    {
+	        Alert.show("Error: " + e.data.error);
+	    } 
+	    else
+	    {
+	    	this.dataProvider= e.data.row;
+	    	this.labelField = "titre";
+	    }    
+	    CursorManager.removeBusyCursor();
+	}
+	
+	private function changeCbMot():void{
+		
+		//vérifie s'il faut ajouter un mot clef;
+		if(this.selectedItem.titre=="-ajout-"){
+			//construction de la fenêtre d'édition
+			var dg:dgGrille = new dgGrille;
+			dg.idGrille="InsertMot";
+			dg.idGroupe=idGroupe;
+			dg.idTag=this.selectedItem.id_tag;
+			dg.showUpdateFirst=true;
+			dg.showAddDelete=true;
+			dg.showFiche=false;
+			dg.Edit=true;
+			dg.objAppelant=this;			
+			this.parent.parent.addChild(dg);
+
+		}
+		
+	}
+	
+	public function AjoutMot():void{
+		
+		//construction de la fenêtre d'édition
+		var twAMC:twAjoutMotClef= twAjoutMotClef(
+            PopUpManager.createPopUp(this, twAjoutMotClef, true));
+		twAMC.dg.idGrille="InsertMot";
+		twAMC.dg.idGroupe=idGroupe;
+		twAMC.dg.idTag=this.selectedItem.id_tag;
+		twAMC.dg.showUpdateFirst=true;
+		twAMC.dg.showAddDelete=true;
+		twAMC.dg.showFiche=false;
+		twAMC.dg.Edit=true;
+		twAMC.dg.objAppelant=this;
+		twAMC.titre = "Créer un transporteur"					
+        PopUpManager.centerPopUp(twAMC);
+
+	}
+
+        ]]>
+    </mx:Script>
+</mx:ComboBox>

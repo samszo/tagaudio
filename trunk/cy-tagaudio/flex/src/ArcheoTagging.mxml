@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 	xmlns:jardin="*"
+	xmlns:v="views.*" 
+	xmlns:vp="views.player.*" 
+	xmlns:analytics="com.google.analytics.components.*"
+	width="100%" height="100%"
+	backgroundColor="black" 
+	horizontalAlign="center" verticalAlign="middle"
+	creationComplete="initApp()">
+	<mx:Script source="http.as"/>
+	<mx:Script source="ArcheoTagging.as"/>
+
+    <analytics:FlexTracker
+        xmlns:analytics="com.google.analytics.components.*"
+        id="tracker"
+        account="UA-3573757-13"
+        mode="AS3"
+        visualDebug="false"
+     />
+
+
+	<mx:Panel id="playerPanel" title="Archeo Tagging"
+		width="100%" height="100%"
+   		verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+		horizontalAlign="center" verticalAlign="middle" borderStyle="none" cornerRadius="0" layout="absolute"
+		backgroundColor="#FFFFFF" 
+		
+		>
+		<mx:VBox width="100%" height="100%">
+			<mx:HBox width="100%" height="20%" >
+				<mx:VBox>
+					<vp:ButtonControlWhiteV id="musicControls" 
+						horizontalAlign="left" borderStyle="none" borderColor="#000000"
+						cornerRadius="6"/>
+					<mx:Label text="{mp3Player.currentTrack + 1} of {mp3Player.dataProvider.length}"/>
+					<mx:Image source="{mp3Player.currentTrackVO.image}" 
+						horizontalAlign="center" verticalAlign="middle" width="56" height="60" 
+						click="mp3Player.getLink()" useHandCursor="true" toolTip="Afficher le détail"							
+						 />
+				</mx:VBox>					
+				<mx:List dataProvider="{mp3Player.dataProvider}" labelField="title"
+					id="nowPlayingGrid" dataTipFunction="dataTipFunction"
+					click="nowPlayingGridClick(event);"
+					enabled="{mp3Player.isMoveTrackEnabled}"
+					backgroundAlpha="0.5"
+					backgroundColor="#FFFFFF" 
+					textRollOverColor="red"
+					color="#000000"
+					width="100%" height="100%"
+					selectedIndex="{mp3Player.currentTrack}" 
+					/>
+				<!--
+				<mx:Canvas id="Ciel" 
+			   		verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+				   		backgroundColor="white" borderColor="black" borderThickness="0" borderStyle="solid"
+				   		width="300" height="300"
+					 backgroundAlpha="0" x="0" y="0">
+					<jardin:TagCloud id="TcDoc"
+						width="{200}" height="{200}"
+						verticalScrollPolicy="off" horizontalScrollPolicy="off"
+						includeInLayout="true" clipContent="true"
+						src="tags_doc" urlAjax="{URL_AJAX}"
+			  		 	 />			
+				</mx:Canvas>
+				-->				
+			</mx:HBox>				
+			<vp:LabelTicker width="100%"
+				text="{mp3Player.currentTrackVO.title} - {mp3Player.currentTrackVO.artist} - {mp3Player.currentTrackVO.album}" 
+				textAlign="center" color="#000000"/>
+			<vp:ControlsLigneV width="100%" height="80%" backgroundColor="#FFFFFF"/>
+		</mx:VBox>				
+	</mx:Panel>		
+	
+</mx:Application>

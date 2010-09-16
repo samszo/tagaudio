@@ -249,7 +249,7 @@ class Flux{
 					ORDER BY e.nom";
 				break;
 			case 'exis_tag':		
-				$sql = "SELECT e.nom tag, e.id_exi id, COUNT(te.id_tag) poids, '$occu' occu, '$repetead' repetead, '160' taille
+				$sql = "SELECT e.nom tag, e.id_exi id, COUNT(te.id_tag) poids, '$occu' occu, '$repetead' repetead, '100' taille
 					FROM flux_exis e
 						INNER JOIN flux_tags_exis te ON te.id_exi = e.id_exi AND te.id_tag = $params AND te.id_instant >= 0
 					GROUP BY e.id_exi
@@ -264,7 +264,7 @@ class Flux{
 					ORDER BY t.tag";
 				break;
 			case 'doc_titre':		
-				$sql = "SELECT d.titre tag, d.titre id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead,  COUNT(d.id_doc) taille
+				$sql = "SELECT d.titre tag, d.titre id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead,  '".($taille*2)."' taille
 					FROM flux_docs d
 					WHERE d.titre != 'Questionnaire de Proust' AND d.content_type='audio/mpeg'
 					GROUP BY d.titre
@@ -272,10 +272,10 @@ class Flux{
 				break;
 			case 'doc_questions':		
 				$titre = $this->site->StringToHTML(utf8_encode($params));		
-				$sql = "SELECT tQ.tag tag, CONCAT(d.titre, '_', d.branche) id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead, '$taille' taille
+				$sql = "SELECT tQ.tag tag, CONCAT(d.titre, '_', d.branche) id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead, '160' taille
 					FROM flux_docs d
 						INNER JOIN flux_tags t ON t.tag = CONCAT('Question ',d.branche) 
-						INNER JOIN flux_tags_tags tt ON tt.id_tag_src = t.id_tag
+						INNER JOIN flux_tags_tags tt ON tt.id_tag_src = t.id_tag AND tt.id_instant >= 0
 						INNER JOIN flux_tags tQ ON tQ.id_tag = tt.id_tag_dst  
 					WHERE d.titre = \"".$titre."\"
 					GROUP BY d.branche
@@ -510,7 +510,13 @@ class Flux{
 								SELECT id_exi FROM flux_tags_exis 
 								WHERE id_tag = $idTagDst AND id_instant >= 0) ";
 					$rs = $this->site->DbGet($sql);
-	
+
+					//met à jour les liens avec les tag
+					$sql = "INSERT INTO flux_tags_tags (id_tag_src, id_tag_dst, id_instant) 
+						SELECT id_tag_src, $idTagDst, $this->idInstant 
+						FROM flux_tags_tags WHERE id_tag_dst = $idTagSrc ";
+					$rs = $this->site->DbGet($sql);
+					
 					//on rend négatif l'instant du tag source		
 					$sql = "UPDATE flux_tags_docs SET id_instant = ".($this->idInstant*-1)." 
 							WHERE id_tag = $idTagSrc AND id_instant >= 0 ";
@@ -520,6 +526,10 @@ class Flux{
 							WHERE id_tag = $idTagSrc AND id_instant >= 0 ";
 					$rs = $this->site->DbGet($sql);
 	
+					$sql = "UPDATE flux_tags_tags SET id_instant = ".($this->idInstant*-1)." 
+							WHERE id_tag_dst = $idTagSrc ";
+					$rs = $this->site->DbGet($sql);
+					
 					$this->site->DbFree();
 			}
 		}

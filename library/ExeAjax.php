@@ -97,7 +97,13 @@ switch ($fonction) {
         echo $oCache->Get();		
         break;
 	case 'GetCols':
-		$oFlex->GetColos($idGrille);
+		 $oCache = new Cache($idGrille, $cacheTime,$fonction);
+         if (!$oCache->Check()) {
+         	$val = $oFlex->GetColos($idGrille);
+         	$oCache->Set($val);
+         }
+         header('Content-type: text/xml');
+         echo $oCache->Get();		
 		break;
 	case "FindAll":
 		 $oCache = new Cache($idGrille."_".$idExi."_".$idDoc, $cacheTime,$fonction);

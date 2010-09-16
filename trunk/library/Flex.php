@@ -6,7 +6,7 @@ class Flex{
   	public $idGrille;
  
     function __tostring() {
-    return "Cette classe permet la création dynamique d'objet XUL.<br/>";
+    return "Cette classe permet la création dynamique d'objet FLEX.<br/>";
     }
 
     function __construct($site, $idGrille="") {
@@ -55,8 +55,7 @@ class Flex{
   		</metadata>".EOL;
 		$xml .= "</response>";
 	    
-		header('Content-type: text/xml');
-		echo $xml;
+		return $xml;
 		
     }
         
@@ -136,8 +135,7 @@ class Flex{
     		
     		
 		if($GetXml){
-	    	header('Content-type: text/xml');
-			echo $xml;
+			return $xml;
 		}else{
 			return simplexml_load_string(utf8_encode($xml));
 		}
@@ -169,7 +167,7 @@ class Flex{
 				
 		}
 		
-		$this->GetToret($rs,$ajoutChampEdit,$AjoutChampNull);		
+		return $this->GetToret($rs,$ajoutChampEdit,$AjoutChampNull);		
 
 	}    
 

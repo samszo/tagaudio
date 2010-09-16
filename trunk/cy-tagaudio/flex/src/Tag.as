@@ -110,7 +110,7 @@
 				case "doc_titre":
 					Dst="doc_questions";
 			        params = _node.name;
-			        w=600;h=600;x=0;y=0;
+			        w=200;h=200;x=200;y=50;
 					if(ciel.getChildByName("tc_tags_docs")){
 				        TagCloud(ciel.getChildByName("tc_tags_docs")).removeAllChildren();
 				 	}

@@ -37,7 +37,7 @@
   		 	 />			
 		<jardin:TagCloud id="TcTagExi"
 			width="{300}" height="{300}"
-			x="380" y="0"
+			x="500" y="0"
 			verticalScrollPolicy="off" horizontalScrollPolicy="off"
 			includeInLayout="true" clipContent="true"
 			src="tags_exis" urlAjax="{URL_AJAX}"
@@ -51,7 +51,7 @@
 			left="0" top="400" right="0" bottom="0" width="800" height="200"
 			>
 			<mx:VBox >
-				<mx:HBox>					
+				<mx:HBox horizontalAlign="center" verticalAlign="middle" >					
 					<mx:List dataProvider="{mp3Player.dataProvider}" labelField="title"
 						id="nowPlayingGrid" dataTipFunction="dataTipFunction"
 						click="nowPlayingGridClick(event);"
@@ -69,7 +69,9 @@
 							horizontalAlign="center" verticalAlign="middle" width="56" height="60" 
 							click="mp3Player.getLink()" useHandCursor="true" toolTip="Afficher le détail"							
 							 />
+						<!--
 						<mx:LinkButton label="change" click="showModif()" />
+						-->
 					</mx:VBox>
 				</mx:HBox>				
 				<vp:ControlsLigne width="760" backgroundColor="#FFFFFF" horizontalAlign="center" verticalAlign="middle" />

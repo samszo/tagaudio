@@ -6,8 +6,8 @@ import mx.rpc.events.ResultEvent;
 import mx.rpc.http.HTTPService;
 
 
-public const ENDPOINT_URL:String = "http://localhost/cy-manifestes/library/ExeAjax.php";
-//public const ENDPOINT_URL:String = "../library/ExeAjax.php";
+//public const ENDPOINT_URL:String = "http://localhost/cy-manifestes/library/ExeAjax.php";
+public const ENDPOINT_URL:String = "http://claudeyacoub.org/library/ExeAjax.php";
 
 
 private var gateway:HTTPService = new HTTPService();

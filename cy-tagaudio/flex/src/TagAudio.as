@@ -11,10 +11,9 @@ import vo.MP3Player;
 
 
 //AJAX CONST
-public static const URL_AJAX:String = "http://localhost/cy-manifestes/library/ExeAjax.php";
-public static const URL_LISTEMP3:String = "http://localhost/cy-manifestes/library/ExeAjax.php?f=GetListeMp3";
-//public static const URL_AJAX:String = "../library/ExeAjax.php";
-//public static const URL_LISTEMP3:String = "../library/ExeAjax.php?f=GetListeMp3";
+//public static const URL_AJAX:String = "http://localhost/cy-manifestes/library/ExeAjax.php";
+public static const URL_AJAX:String = "http://claudeyacoub.org/library/ExeAjax.php";
+public static const URL_LISTEMP3:String = URL_AJAX+"?f=GetListeMp3";
 
 //PLAYER VIEWS STATIC CONST
 public static const PLAYER_PLAYLIST:Number = 0;
@@ -35,6 +34,7 @@ public function getConfig(params:String):void{
 	trace("Application:getConfig:url:"+param.playlist_url);
 	
 	mp3Player.getConfig(param);
+	mp3Player.volume = 50;
 	
 	playerPanel.addEventListener("panelMenuChange",onPanelMenuChange);
 	mp3Player.addEventListener("onDelayViewChange",onDelayViewChange);

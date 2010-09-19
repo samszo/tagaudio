@@ -272,7 +272,7 @@ class Flux{
 				break;
 			case 'doc_questions':		
 				$titre = $this->site->StringToHTML(utf8_encode($params));		
-				$sql = "SELECT tQ.tag tag, CONCAT(d.titre, '_', d.branche) id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead, '160' taille
+				$sql = "SELECT tQ.tag tag, CONCAT(d.titre, '_', d.branche) id, COUNT(d.id_doc) poids, '$occu' occu, '$repetead' repetead, '100' taille
 					FROM flux_docs d
 						INNER JOIN flux_tags t ON t.tag = CONCAT('Question ',d.branche) 
 						INNER JOIN flux_tags_tags tt ON tt.id_tag_src = t.id_tag AND tt.id_instant >= 0

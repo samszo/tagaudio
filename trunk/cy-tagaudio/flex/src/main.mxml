@@ -4,10 +4,10 @@
 	xmlns:v="views.*" 
 	xmlns:vp="views.player.*" 
 	xmlns:analytics="com.google.analytics.components.*"
-	width="100%" height="100%"
-	backgroundColor="black" 
+	width="760" height="620" 
+	backgroundColor="white" 
 	horizontalAlign="center" verticalAlign="middle"
-	creationComplete="initApp()">
+	creationComplete="initApp()" backgroundGradientAlphas="[0.0, 0.0]">
 	<mx:Script source="http.as"/>
 	<mx:Script source="TagAudio.as"/>
 
@@ -20,13 +20,13 @@
      />
 
 
-	<mx:Panel id="tagPanel" width="800" height="600" title=""
+	<mx:Panel id="tagPanel" width="100%" height="100%" title=""
    		verticalScrollPolicy="off" horizontalScrollPolicy="off" 
 		horizontalAlign="center" verticalAlign="middle" borderStyle="none" cornerRadius="0" layout="absolute">
 		<mx:Canvas id="Cieux" 
 	   		verticalScrollPolicy="off" horizontalScrollPolicy="off" 
 		   		backgroundColor="white" borderColor="black" borderThickness="0" borderStyle="solid"
-		   		width="800" height="600"
+		   		width="760" height="600"
 			 backgroundAlpha="0" x="0" y="0">
 		<jardin:TagCloud id="TcDocTitre"
 			width="{160}" height="{160}"
@@ -37,7 +37,7 @@
   		 	 />			
 		<jardin:TagCloud id="TcTagExi"
 			width="{300}" height="{300}"
-			x="500" y="0"
+			x="400" y="0"
 			verticalScrollPolicy="off" horizontalScrollPolicy="off"
 			includeInLayout="true" clipContent="true"
 			src="tags_exis" urlAjax="{URL_AJAX}"
@@ -48,9 +48,9 @@
    			verticalScrollPolicy="off" horizontalScrollPolicy="off" 
 			horizontalAlign="center" verticalAlign="middle" borderStyle="none" cornerRadius="0" layout="absolute"
 			backgroundColor="#FFFFFF" 
-			left="0" top="400" right="0" bottom="0" width="800" height="200"
+			left="0" top="400" right="0" bottom="0" width="100%" height="100%"
 			>
-			<mx:VBox >
+			<mx:VBox width="100%" height="100%" >
 				<mx:HBox horizontalAlign="center" verticalAlign="middle" >					
 					<mx:List dataProvider="{mp3Player.dataProvider}" labelField="title"
 						id="nowPlayingGrid" dataTipFunction="dataTipFunction"
@@ -58,10 +58,11 @@
 						enabled="{mp3Player.isMoveTrackEnabled}"
 						backgroundAlpha="0.5"
 						backgroundColor="#FFFFFF" 
-						textRollOverColor="red"
+						textRollOverColor="white"
+						rollOverColor="black"
 						color="#000000"
-						width="690" 
-						height="90"
+						width="600" 
+						height="70"
 						selectedIndex="{mp3Player.currentTrack}" 
 						/>
 					<mx:VBox horizontalAlign="center" verticalAlign="middle" >					
@@ -74,7 +75,7 @@
 						-->
 					</mx:VBox>
 				</mx:HBox>				
-				<vp:ControlsLigne width="760" backgroundColor="#FFFFFF" horizontalAlign="center" verticalAlign="middle" />
+				<vp:ControlsLigne height="100" width="90%" backgroundColor="#FFFFFF"  />
 			</mx:VBox>				
 		</mx:Panel>		
 	</mx:Panel>

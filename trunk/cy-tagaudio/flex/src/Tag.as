@@ -117,12 +117,12 @@
 			        break;
 			    case "doc_questions":
 					Dst="tags_docs";
-			        w=300;h=300;x=0;y=150;
+			        w=300;h=300;x=64;y=150;
 			        params = _node.tid;
 			        break;
 			    case "tags_exis":
 					Dst="exis_tag";
-			        w=300;h=300;x=400;y=150;
+			        w=300;h=300;x=350;y=150;
 			        params = _node.tid;
 			        break;
 			}				    

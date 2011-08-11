@@ -1,5 +1,7 @@
 ﻿package 
 {
+	//inspiré par http://carvalhar.com/componente/FlexCumulusTagCloud/
+	
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.net.URLLoader;

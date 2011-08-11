@@ -4,7 +4,7 @@
 
   //define ("PathRoot",$_SERVER["DOCUMENT_ROOT"]."/");
   //define ("PathWeb","http://claudeyacoub.org/");
-  //pour le débubbage
+  //pour le dÃ©bubbage
   define ("PathRoot","C:/wamp/www/cy-manifestes/");
   define ("PathWeb","http://localhost/cy-manifestes/");
   
@@ -19,8 +19,8 @@
   define ("TRACE", false);
   define ("DEFSITE", "local");
 
-  define ("CACHETIME", 0); //86400 une journée
-  define ("FORCE_CALCUL", true); //pour forcer les calculs et la mise à jour
+  define ("CACHETIME", 0); //86400 une journÃ©e
+  define ("FORCE_CALCUL", true); //pour forcer les calculs et la mise Ã  jour
   define('CACHE_PATH', PathRoot.'tmp/');    
   define('EOL', "\r\n");
   define ("PathAjax",PathWeb."library/ExeAjax.php");
@@ -33,14 +33,6 @@
 	"SQL_DB" => "cy_tagaudio",
 	"NOM" => "tagaudio",//je sais pas
   	); 
-/*
-  $infos = array(
-	"SQL_LOGIN" => "claudeyacoub", 
-	"SQL_PWD" => "KXInZ9sd", 
-	"SQL_HOST" => "mysql5-8.perso",
-	"SQL_DB" => "claudeyacoub",
-	"NOM" => "tagaudio",//je sais pas
-  	); 
-*/  	
+
   	
 ?>

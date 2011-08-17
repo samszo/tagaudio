@@ -116,10 +116,10 @@ switch ($fonction) {
          
 		break;
 	case "Delete":
-		$oFlex->Delete($idGrille,$idExi,$idDoc,$idTag);
+		//$oFlex->Delete($idGrille,$idExi,$idDoc,$idTag);
 		break;
 	case "InsertTag":
-		$oFlex->InsertTag($idGrille,$idExi,$idDoc,$tag);
+		//$oFlex->InsertTag($idGrille,$idExi,$idDoc,$tag);
 		break;
 }
 
